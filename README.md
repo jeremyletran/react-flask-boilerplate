@@ -61,8 +61,6 @@ open http://127.0.0.1:5000/
 For development / hot-reloading, use:
 ```
 heroku local dev
-
-open http://127.0.0.1:5000/
 ```
 
 ## What do we have here?
