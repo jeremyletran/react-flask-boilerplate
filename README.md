@@ -32,6 +32,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Copy .env.example config file to .env:
+
+```
+cp .env.example .env
+```
+
 Start PostgreSQL service if needed. If you've never installed Postgres on your system before, I recommend using [Postgres.app](https://postgresapp.com/) (only works for MacOSX). Else, install Postgres [here](http://www.postgresql.org/download/) and run the command below.
 
 ```
