@@ -2,7 +2,7 @@
   "name": "react-flask-boilerplate",
   "version": "0.1.0",
   "private": false,
-  "description": "React Flask Boilerplate. Uses React 16, Webpack 4, python 2.7. Support for multiple pages.",
+  "description": "React Flask Boilerplate. Uses React 16, Redux 4, Webpack 4, Python 2.7, Postgres 19 and Heroku. Support for multiple pages.",
   "scripts": {
     "gunicorn": "gunicorn -c gunicorn.cfg --reload --chdir server entry:app",
     "start": "webpack-dev-server --open --mode development",
@@ -11,6 +11,25 @@
     "dist": "NODE_ENV=production webpack",
     "postinstall": "npm run dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremyletran/react-flask-boilerplate.git"
+  },
+  "engines": {
+    "node": "6.15.1",
+    "npm": "6.5.0"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "boilerplate",
+    "production",
+    "hot",
+    "reload",
+    "flask",
+    "postgres",
+    "redux"
+  ],
   "author": "Jeremy Le-Tran",
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -18,6 +37,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "bootstrap": "^4.1.3",
+    "concurrently": "4.1.0",
     "flummox": "3.6.8",
     "humps": "^2.0.1",
     "immutability-helper": "2.9.0",

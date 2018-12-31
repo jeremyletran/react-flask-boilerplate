@@ -1,8 +1,8 @@
 aniso8601==1.0.0
-Flask==0.10.1
-Flask-RESTful==0.3.3
-Flask-SQLAlchemy==2.0
-gunicorn==19.3.0
+Flask==0.12.3
+Flask-RESTful==0.3.6
+Flask-SQLAlchemy==2.3.0
+gunicorn==19.5.0
 itsdangerous==0.24
 Jinja2==2.7.3
 MarkupSafe==0.23
