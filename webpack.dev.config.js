@@ -1,88 +1,98 @@
-'use strict';
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
-var path = require('path');
-var webpack = require('webpack');
-var config = require('./webpack.base.config.js');
-var update = require('react/lib/update');
-var ExportFilesWebpackPlugin = require('export-files-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = options => {
+  return {
+    mode: 'development',
+    entry: [
+      "webpack-dev-server/client?http://localhost:3000",
+      // "webpack/hot/dev-server",
+      "./client/entry.js"
+    ],
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      publicPath: "/",
+      filename: "bundle.js"
+    },
+    devServer: {
+      historyApiFallback: true,
+      port: "3000",
 
-if (process.env.NODE_ENV !== 'test') {
-  config = update(config, {
-    entry: {
-      $set: [
-        'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/dev-server',
-        './client/entry'
-      ]
-    }
-  });
-}
+      contentBase: "./dist",
 
-config = update(config, {
-  debug: { $set: true },
-
-  profile: { $set: true },
-
-  devtool: { $set: 'eval-source-map' },
-
-  output: {
-    $set: {
-      path: path.join(process.cwd(), '/dev/static/scripts'),
-      pathInfo: true,
-      publicPath: 'http://localhost:3000/static/scripts/',
-      filename: 'main.js'
-    }
-  },
-
-  plugins: {
-    $push: [
-      new webpack.HotModuleReplacementPlugin(),
-      new HtmlWebpackPlugin({
-        inject: true,
-        filename: 'dev/index.html',
-        template: 'client/views/index.tpl'
-      }),
-      new ExportFilesWebpackPlugin('dev/index.html')
-    ]
-  },
-
-  module: {
-    loaders: {
-      $push: [
-        { test: /\.jsx?$/, loaders: [ 'babel' ], exclude: /node_modules/ }
-      ]
-    }
-  },
-
-  devServer: {
-    $set: {
-      publicPath: '/static/scripts/',
-
-      port: 3000,
-
-      contentBase: './dev',
+      host: "localhost",
 
       inline: true,
-
-      hot: true,
 
       stats: {
         colors: true
       },
 
-      historyApiFallback: true,
-
       headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3001',
-        'Access-Control-Allow-Headers': 'X-Requested-With'
+        "Access-Control-Allow-Origin": "http://127.0.0.1:5000",
+        "Access-Control-Allow-Headers": "X-Requested-With"
       },
 
       proxy: {
-        '/api/*': 'http://localhost:3001'
-      }
-    }
-  }
-});
-
-module.exports = config;
+        "/api/**": {
+          target: "http://127.0.0.1:5000",
+          secure: false,
+          changeOrigin: true
+          // cookieDomainRewrite: true
+        }
+      },
+      open: true,
+      openPage: ""
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader"
+          }
+        },
+        {
+          test: /\.css$/,
+          use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
+        },
+        {
+          test: /\.html$/,
+          use: [
+            {
+              loader: "html-loader"
+            }
+          ]
+        },
+        {
+          test: /\.(png|jpg|gif|JPG|jpeg|woff|woff2|eot|ttf|svg)$/i,
+          use: [
+            {
+              loader: "url-loader",
+              options: {
+                limit: 8192
+              }
+            }
+          ]
+        }
+      ]
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: "style.css"
+      }),
+      new HtmlWebPackPlugin({
+        // template: 'client/index.html',
+        template: "client/views/index.html",
+        filename: "./index.html"
+      })
+      // new CopyWebpackPlugin([
+      //   // relative path is from src
+      //   { from: './src/img/favicon.ico' }
+      // ])
+    ]
+  };
+};

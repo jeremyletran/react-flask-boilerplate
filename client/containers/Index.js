@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import useSheet from 'react-jss';
-import Kittens from '../components/Kittens';
+import Kittens from './Kittens';
 import { connect } from 'react-redux';
 import { requestKittens } from '../actions/kittens';
 
-export default class Index extends Component {
+export class Index extends Component {
   componentDidMount() {
     this.props.requestKittens();
   }
@@ -13,7 +13,7 @@ export default class Index extends Component {
     const { sheet } = this.props;
 
     return (
-      <div className={sheet.classes.index}>
+      <div className={sheet.classes.index}> 
         <Kittens />
       </div>
     );

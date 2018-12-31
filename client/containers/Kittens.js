@@ -1,5 +1,5 @@
 import React from 'react';
-import Kitten from './Kitten';
+import Kitten from '../components/Kitten';
 import useSheet from 'react-jss';
 import { connect } from 'react-redux';
 import { addKitten, deleteKitten } from '../actions/kittens';
@@ -19,7 +19,7 @@ const Kittens = ({ sheet, kittens, addKitten, deleteKitten }) =>
       </div>
     }
     {!kittens.length &&
-      <h1>This backet has no kittens in it :(</h1>
+      <h1>This basket has no kittens in it :(</h1>
     }
     <a className={sheet.classes.button} onClick={addKitten}>
       Put another kitten into basket

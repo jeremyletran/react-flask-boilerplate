@@ -1,15 +1,22 @@
+// {
+//   "presets": ["es2015", "stage-0", "react"],
+//   "plugins": ["transform-runtime"],
+//   "env": {
+//     "development": {
+//       "plugins": [["react-transform", {
+//         "transforms": [{
+//           "transform": "react-transform-hmr",
+//           "imports": ["react"],
+//           "locals": ["module"]
+//         }]
+//       }]]
+//     }
+//   }
+// }
+
 {
-  "presets": ["es2015", "stage-0", "react"],
-  "plugins": ["transform-runtime"],
-  "env": {
-    "development": {
-      "plugins": [["react-transform", {
-        "transforms": [{
-          "transform": "react-transform-hmr",
-          "imports": ["react"],
-          "locals": ["module"]
-        }]
-      }]]
-    }
-  }
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ]
 }
