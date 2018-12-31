@@ -1,6 +1,6 @@
 {
-  "name": "Flask React Boilerplate",
-  "description": "Flask React Boilerplate",
+  "name": "React Flask Boilerplate",
+  "description": "React Flask Boilerplate",
   "keywords": [
     "react",
     "webpack",
@@ -12,11 +12,19 @@
     "hot",
     "reload"
   ],
-  "website": "https://github.com/alexkuz/flask-react-boilerplate",
+  "website": "https://github.com/jeremyletran/react-flask-boilerplate",
   "logo": "http://i.imgur.com/ydf7myp.png",
   "addons": ["heroku-postgresql:hobby-dev"],
+  "stack": "heroku-18",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ],
   "env": {
-    "BUILDPACK_URL": "https://github.com/ddollar/heroku-buildpack-multi",
     "NODE_ENV": {
       "description": "Set the `NODE_ENV` environment variable to `production` to disable debugging etc.",
       "value": "production"
