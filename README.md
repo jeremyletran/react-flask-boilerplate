@@ -7,13 +7,14 @@ This boilerplate uses React 16, Redux 4, Webpack 4, Python 2.7, PostgreSQL and H
 - [Pip](https://pip.pypa.io/en/latest/installing.html)
 - [PostgreSQL](http://www.postgresql.org/download/)
 - [NPM](https://docs.npmjs.com/getting-started/installing-node)
+- [Heroku](https://devcenter.heroku.com/articles/heroku-cli)
 
 Clone repository:
 
 ```
-git clone https://github.com/jeremyletran/react-flask-boilerplate.git
+git clone https://github.com/jeremyletran/bbs-portal.git
 
-cd react-flask-boilerplate
+cd bbs-portal
 ```
 
 Install npm dependencies:
@@ -31,7 +32,6 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 ```
-
 Copy .env.example config file to .env:
 
 ```
@@ -61,6 +61,11 @@ open http://127.0.0.1:5000/
 For development / hot-reloading, use:
 ```
 heroku local dev
+```
+
+Before deploying to your heroku staging/production server for the first time, be sure to run:
+```
+heroku run initdb -a [YOUR-APP-NAME]
 ```
 
 ## What do we have here?

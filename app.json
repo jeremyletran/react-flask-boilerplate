@@ -23,7 +23,7 @@
     {
       "url": "heroku/python"
     }
-  ],  
+  ],
   "env": {
     "NODE_ENV": {
       "description": "Set the `NODE_ENV` environment variable to `production` to disable debugging etc.",
@@ -32,6 +32,10 @@
     "NPM_CONFIG_PRODUCTION": {
       "description": "By default heroku is not installing `devDependencies`, so let's do that.",
       "value": "false"
+    },
+    "PYTHONUNBUFFERED": {
+      "description": "...",
+      "value": "true"
     }
   },
   "scripts": {
