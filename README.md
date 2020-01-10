@@ -26,11 +26,11 @@ npm install
 Setup python environment and install dependencies:
 
 ```
-virtualenv venv
+python3 -m venv env
 
 source venv/bin/activate
 
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 Copy .env.example config file to .env:
 
