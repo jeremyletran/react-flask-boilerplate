@@ -1,6 +1,6 @@
 aniso8601==1.0.0
 Click==7.0
-Flask==0.12.3
+Flask==1.0
 Flask-RESTful==0.3.6
 Flask-SQLAlchemy==2.3.0
 gunicorn==19.5.0
