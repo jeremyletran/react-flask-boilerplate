@@ -1,5 +1,5 @@
 # React Flask Boilerplate
-This boilerplate uses React 16, Redux 4, Webpack 4, Python 2.7, PostgreSQL and Heroku. This repo is based off of [**Flask React Boilerplate**](https://github.com/alexkuz/flask-react-boilerplate), but has been refactored to support newer versions of React, Redux, and Webpack. I've also included React Router in the boilerplate to support multi-page applications.
+This boilerplate uses React 16, Redux 4, Webpack 4, Python 3.7.1, PostgreSQL and Heroku. This repo is based off of [**Flask React Boilerplate**](https://github.com/alexkuz/flask-react-boilerplate), but has been refactored to support newer versions of React, Redux, and Webpack. I've also included React Router in the boilerplate to support multi-page applications.
 
 ## Installation
 **Prerequisites**:
