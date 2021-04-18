@@ -26,7 +26,7 @@ npm install
 Setup python environment and install dependencies:
 
 ```
-python3.7.1 -m venv env
+python3.7 -m venv env
 
 source env/bin/activate
 
