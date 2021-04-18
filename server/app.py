@@ -1,10 +1,11 @@
 import os
 from os.path import join, dirname
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 from logging import StreamHandler
 from sys import stdout
-from flask import Flask
+
 
 dotenv_path = join(dirname(__file__), '../.env')
 load_dotenv(dotenv_path)

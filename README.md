@@ -26,9 +26,9 @@ npm install
 Setup python environment and install dependencies:
 
 ```
-python3 -m venv env
+python3.7.1 -m venv env
 
-source venv/bin/activate
+source env/bin/activate
 
 pip3 install -r requirements.txt
 ```
