@@ -12,9 +12,9 @@ This boilerplate uses React 16, Redux 4, Webpack 4, Python 2.7, PostgreSQL and H
 Clone repository:
 
 ```
-git clone https://github.com/jeremyletran/bbs-portal.git
+git clone https://github.com/jeremyletran/react-flask-boilerplate.git
 
-cd bbs-portal
+cd react-flask-boilerplate
 ```
 
 Install npm dependencies:
