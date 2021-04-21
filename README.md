@@ -32,6 +32,12 @@ source env/bin/activate
 
 pip3 install -r requirements.txt
 ```
+
+You may need to run the command below if you get `Error: pg_config executable not found.`
+
+```
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+```
 Copy .env.example config file to .env:
 
 ```
